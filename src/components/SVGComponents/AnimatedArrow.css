@@ -1,0 +1,56 @@
+.splash-arrow {
+  position: absolute;
+  top: calc(100vh - 70px);
+}
+
+.arrow--tail {
+  stroke-dasharray: 45;
+  animation: tail-dash 4s ease-in-out infinite;
+}
+
+@keyframes tail-dash {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  75% {
+    stroke-dashoffset: 0;
+  }
+  85% {
+    stroke-dashoffset: -45;
+  }
+  90% {
+    stroke-dashoffset: -45;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.arrow--head {
+  stroke-dasharray: 27;
+  animation: head-dash 4s ease-in-out infinite;
+}
+
+@keyframes head-dash {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  75% {
+    stroke-dashoffset: 0;
+  }
+  85% {
+    stroke-dashoffset: -27;
+  }
+  90% {
+    stroke-dashoffset: -27;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

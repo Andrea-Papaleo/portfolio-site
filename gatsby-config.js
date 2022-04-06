@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `portfolio-site`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: ["gatsby-plugin-styled-components"]
+  plugins: [{ resolve: "gatsby-plugin-styled-components" }],
 };
