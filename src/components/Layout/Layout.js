@@ -12,7 +12,7 @@ const Layout = ({ pageTitle, children }) => {
       <div>
         <GlobalStyle />
         <title>{pageTitle}</title>
-        <Navbar />
+        <Navbar page={pageTitle} />
         <main>{children}</main>
       </div>
     </WindowContext.Provider>

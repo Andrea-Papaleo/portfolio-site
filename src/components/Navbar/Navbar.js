@@ -7,16 +7,12 @@ import {
   NavbarTitle,
   NavbarHamburger,
 } from "./NavbarElements";
-import { useWindowDimensions, useScrollPosition } from "../../hooks";
 import { breakpoints } from "../../utilities";
 import { WindowContext } from "../../contexts";
 
-const Navbar = () => {
+const Navbar = ({ page }) => {
   const [isNavShown, setIsNavShown] = useState(false);
-  //const { width } = useWindowDimensions();
-  //const { isTop } = useScrollPosition();
   const [width, isTop] = useContext(WindowContext);
-  console.log(width);
 
   const toggleNav = () => {
     setIsNavShown(!isNavShown);
@@ -25,31 +21,25 @@ const Navbar = () => {
   return (
     <NavbarContainer isTop={isTop}>
       <NavbarLogoContainer>
-        <NavbarTitle isTop={isTop}>
+        <NavbarTitle isTop={page === "resume" ? false : isTop}>
           {width < breakpoints.small ? "AP" : "APapaleo"}
         </NavbarTitle>
       </NavbarLogoContainer>
-      <NavbarHamburger active={isNavShown} isTop={isTop} onClick={toggleNav}>
+      <NavbarHamburger
+        active={isNavShown}
+        isTop={page === "resume" ? false : isTop}
+        onClick={toggleNav}
+      >
         <span></span>
         <span></span>
         <span></span>
       </NavbarHamburger>
-      <NavbarMenu active={isNavShown}>
-        <NavLink isTop={isTop} to="/">
-          Home
-        </NavLink>
-        <NavLink isTop={isTop} to="/about">
-          About
-        </NavLink>
-        <NavLink isTop={isTop} to="/">
-          Works
-        </NavLink>
-        <NavLink isTop={isTop} to="/">
-          Uses
-        </NavLink>
-        <NavLink isTop={isTop} to="/">
-          Contact
-        </NavLink>
+      <NavbarMenu active={isNavShown} isTop={page === "resume" ? false : isTop}>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/">Works</NavLink>
+        <NavLink to="/">Uses</NavLink>
+        <NavLink to="/">Contact</NavLink>
       </NavbarMenu>
     </NavbarContainer>
   );

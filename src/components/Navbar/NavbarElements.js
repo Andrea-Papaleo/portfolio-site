@@ -27,12 +27,32 @@ export const NavbarTitle = styled.h1`
   color: ${(props) => (props.isTop ? colors.cosmic_latte : colors.kombu_green)};
 `;
 
+export const NavLink = styled(Link)`
+  display: flex;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: transform 0.1s ease-in;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.125);
+    transition: transform 0.1s ease-out;
+  }
+  &:active {
+    transform: scale(1);
+  }
+`;
+
 export const NavbarMenu = styled.ul`
   margin: 0 2rem;
   display: flex;
   align-items: center;
   column-gap: 2rem;
   transition: all 0.2s ease-in-out;
+  ${NavLink} {
+    color: ${(props) =>
+      props.isTop ? colors.cosmic_latte : colors.kombu_green};
+  }
   @media screen and (max-width: ${breakpoints.small}px) {
     position: fixed;
     margin-right: 0.5rem;
@@ -80,21 +100,5 @@ export const NavbarHamburger = styled.div`
 
   @media screen and (min-width: ${breakpoints.small}px) {
     display: none;
-  }
-`;
-export const NavLink = styled(Link)`
-  display: flex;
-  text-decoration: none;
-  color: ${(props) => (props.isTop ? colors.cosmic_latte : colors.kombu_green)};
-  font-size: 1.25rem;
-  transition: transform 0.1s ease-in;
-  transition: background-color 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.125);
-    transition: transform 0.1s ease-out;
-  }
-  &:active {
-    transform: scale(1);
   }
 `;

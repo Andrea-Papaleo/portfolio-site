@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../utilities";
 
-export const BioContainer = styled.main`
+export const BioContainer = styled.section`
   width: 100%;
   padding: 3rem 0;
   background-color: ${colors.kombu_green};
@@ -13,10 +13,11 @@ export const BioContainer = styled.main`
   h1 {
     font-size: clamp(1.75rem, 3vw, 4rem);
     color: ${colors.peach_puff};
+    font-weight: 400;
   }
   p {
     width: 360px;
-    font-family: "noto-serif";
+    font-family: "EB Garamond";
     font-size: clamp(1rem, 1.8vw, 3rem);
     text-align: center;
     color: ${colors.cosmic_latte};

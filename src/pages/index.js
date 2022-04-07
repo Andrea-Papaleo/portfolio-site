@@ -16,7 +16,7 @@ const IndexPage = () => {
           I am a front-end engineer with backgrounds in physics, scientific
           computing, and FinTech. Let's work together.
         </p>
-        <Button as={Link} to="/about">
+        <Button as={Link} to="/resume">
           Resume
         </Button>
       </BioContainer>
