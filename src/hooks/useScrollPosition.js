@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 
 export const useScrollPosition = () => {
   const [isTop, setIsTop] = useState(true);
-  const [y, setY] = useState(window.scrollY);
+  const [y, setY] = useState(
+    typeof window !== `undefined` ? window.scrollY : 0
+  );
 
   useEffect(() => {
     const threshold = 0;
