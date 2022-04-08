@@ -9,7 +9,12 @@ import {
 } from "./NavbarElements";
 import { breakpoints } from "../../utilities";
 import { WindowContext } from "../../contexts";
+import { colors } from "../../utilities";
 
+const fontColors = {
+  resume: colors.space_cadet,
+  default: colors.kombu_green,
+};
 const Navbar = ({ page }) => {
   const [isNavShown, setIsNavShown] = useState(false);
   const [width, isTop] = useContext(WindowContext);
@@ -18,23 +23,36 @@ const Navbar = ({ page }) => {
     setIsNavShown(!isNavShown);
   };
 
+  const activeFontColor = fontColors.hasOwnProperty(page)
+    ? fontColors[page]
+    : fontColors.default;
+  console.log(activeFontColor);
+
   return (
-    <NavbarContainer isTop={isTop}>
+    <NavbarContainer isTop={page === "resume" ? false : isTop}>
       <NavbarLogoContainer>
-        <NavbarTitle isTop={page === "resume" ? false : isTop}>
+        <NavbarTitle
+          isTop={page === "resume" ? false : isTop}
+          color={activeFontColor}
+        >
           {width < breakpoints.small ? "AP" : "APapaleo"}
         </NavbarTitle>
       </NavbarLogoContainer>
       <NavbarHamburger
         active={isNavShown}
         isTop={page === "resume" ? false : isTop}
+        color={activeFontColor}
         onClick={toggleNav}
       >
         <span></span>
         <span></span>
         <span></span>
       </NavbarHamburger>
-      <NavbarMenu active={isNavShown} isTop={page === "resume" ? false : isTop}>
+      <NavbarMenu
+        active={isNavShown}
+        isTop={page === "resume" ? false : isTop}
+        color={activeFontColor}
+      >
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/">Works</NavLink>

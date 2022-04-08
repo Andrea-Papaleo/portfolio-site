@@ -88,11 +88,11 @@ export const resumeData = {
   skills: [
     {
       position: "Scientific Computing",
-      description: `Physics simulations,data analysis & visualization, Python, C++, `,
+      description: `Physics simulations, data analysis & visualization, Python, C++`,
     },
     {
       position: "Front-End",
-      description: `JavaScript, React/Gatsby,Next.JS, Node.JS tooling, CSS-in-JS,HTML/CSS, SCSS, Jekyll, Liquid`,
+      description: `JavaScript, React/Gatsby, Next.JS, Node.JS tooling, CSS-in-JS, HTML/CSS, SCSS, Jekyll, Liquid`,
     },
     {
       position: "Back-End",

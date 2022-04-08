@@ -24,7 +24,7 @@ export const NavbarLogoContainer = styled.div`
 export const NavbarTitle = styled.h1`
   font-size: 2rem;
   font-weight: 300;
-  color: ${(props) => (props.isTop ? colors.cosmic_latte : colors.kombu_green)};
+  color: ${(props) => (props.isTop ? colors.cosmic_latte : props.color)};
 `;
 
 export const NavLink = styled(Link)`
@@ -50,8 +50,7 @@ export const NavbarMenu = styled.ul`
   column-gap: 2rem;
   transition: all 0.2s ease-in-out;
   ${NavLink} {
-    color: ${(props) =>
-      props.isTop ? colors.cosmic_latte : colors.kombu_green};
+    color: ${(props) => (props.isTop ? colors.cosmic_latte : props.color)};
   }
   @media screen and (max-width: ${breakpoints.small}px) {
     position: fixed;
@@ -79,7 +78,7 @@ export const NavbarHamburger = styled.div`
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
     background-color: ${(props) =>
-      props.isTop ? colors.cosmic_latte : colors.kombu_green};
+      props.isTop ? colors.cosmic_latte : props.color};
   }
 
   ${(props) => {
