@@ -10,6 +10,7 @@ import {
 import { breakpoints } from "../../utilities";
 import { WindowContext } from "../../contexts";
 import { colors } from "../../utilities";
+import { Link } from "gatsby";
 
 const fontColors = {
   resume: colors.space_cadet,
@@ -29,11 +30,15 @@ const Navbar = ({ page }) => {
   console.log(activeFontColor);
 
   return (
-    <NavbarContainer isTop={page === "resume" ? false : isTop}>
+    <NavbarContainer
+      color={activeFontColor}
+      isTop={page === "resume" ? false : isTop}
+    >
       <NavbarLogoContainer>
         <NavbarTitle
           isTop={page === "resume" ? false : isTop}
           color={activeFontColor}
+          to="/"
         >
           {width < breakpoints.small ? "AP" : "APapaleo"}
         </NavbarTitle>
@@ -54,8 +59,8 @@ const Navbar = ({ page }) => {
         color={activeFontColor}
       >
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
         <NavLink to="/">Works</NavLink>
+        <NavLink to="/">Research</NavLink>
         <NavLink to="/">Uses</NavLink>
         <NavLink to="/">Contact</NavLink>
       </NavbarMenu>
